@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/style.ejs') %>
+    <title>BlogIt SignUp</title>
+  </head>
+  <body class="bg-secondary text-white px-3">
+    <%- include('partials/nav.ejs') %>
+
+    <br />
+
+    <% if (locals.error) { %>
+
+    <h1><%= error %></h1>
+    <% } %>
+
+    <div class="container">
+      <form action="/users/signup" method="post">
+        <div class="mb-3">
+          <label for="profileImageUrl" class="form-label"
+            >profileImageUrl</label
+          >
+          <input
+            name="profileImageUrl"
+            type="file"
+            class="form-control"
+            id="file1"
+            aria-describedby="file"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="fullName" class="form-label">Full Name</label>
+          <input
+            name="fullName"
+            type="text"
+            class="form-control"
+            id="fullName1"
+            aria-describedby="fullName"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email1"
+            aria-describedby="email"
+            name="email"
+          />
+          <div id="emailHelp" class="form-text">
+            We'll never share your email with anyone else.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input
+            name="password"
+            type="password"
+            class="form-control"
+            id="password1"
+            aria-describedby="password"
+          />
+        </div>
+
+        <button type="submit" class="btn btn-primary">SignUp</button>
+      </form>
+    </div>
+
+    <%- include('partials/script.ejs') %>
+  </body>
+</html>
